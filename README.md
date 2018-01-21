@@ -12,6 +12,18 @@ Invoke the container just like *cmakelint* ifself:
 
     docker run --rm saschpe/cmakelint --help
 
+Assuming you want to format all headers and sources in a directory
+*src*, a full example might look like this:
+
+    cmake_files=$(find . \( -name CMakeLists.txt -o -name *.cmake \) -exec echo /opt/{} \;)
+    docker run \
+        --rm \
+        --privileged=true \
+        --volume ${PWD}:/opt \
+        saschpe/cmakelint ${cmake_files}
+
+Just put this into a script for easier invocation.
+
 
 ## Scripts
 These scripts simplify various tasks related to container building and
