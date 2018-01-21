@@ -12,7 +12,7 @@ Invoke the container just like *cmakelint* ifself:
 
     docker run --rm saschpe/cmakelint --help
 
-Assuming you want to format all headers and sources in a directory
+Assuming you want to format all CMake files in a directory
 *src*, a full example might look like this:
 
     cmake_files=$(find . \( -name CMakeLists.txt -o -name *.cmake \) -exec echo /opt/{} \;)
