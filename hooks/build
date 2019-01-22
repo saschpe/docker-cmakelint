@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for cmakelint in ${CMAKELINT[*]} ; do
+    ./scripts/docker/build \
+        --cmakelint ${cmakelint} \
+        --docker-push
+done
